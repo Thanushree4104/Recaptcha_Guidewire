@@ -129,3 +129,172 @@ To build a **real-time financial safety layer** for gig workers by combining:
 - Intelligent automation  
 
 ---
+
+# 💰 Dynamic Weekly Premium Model
+### AI-Driven Pricing Engine for ShieldRide
+
+---
+
+## 🎯 Objective
+
+Design a **risk-adjusted, automated weekly premium system** that:
+
+- Reflects **real-time income risk**
+- Incentivizes **optimal worker behavior**
+- Ensures **profitability**
+- Integrates **fraud resistance**
+
+---
+
+## 🧠 Core Pricing Function
+
+\[
+P_w = B \cdot (1 + R_w) \cdot (1 - I_w) + C + \gamma F_w
+\]
+
+---
+
+### 🔍 Variables
+
+| Symbol | Description |
+|--------|------------|
+| \( P_w \) | Weekly Premium |
+| \( B \) | Base Premium |
+| \( R_w \) | Risk Score (ML output, 0–1) |
+| \( I_w \) | Incentive Factor (0–0.3) |
+| \( C \) | Operational Cost + Margin |
+| \( F_w \) | Fraud Risk Score (0–1) |
+| \( \gamma \) | Fraud Penalty Weight |
+
+---
+
+## ⚙️ Risk Scoring (ML Layer)
+
+\[
+R_w = f(X)
+\]
+
+- Model: **Gradient Boosting (XGBoost / LightGBM)**
+- Output: Probability of payout-trigger events
+
+---
+
+### 📊 Feature Set
+
+\[
+X = \{
+\text{income variance},
+\text{idle time ratio},
+\text{peak-hour participation},
+\text{zone demand volatility},
+\text{weather risk},
+\text{platform downtime},
+\text{historical payouts}
+\}
+\]
+
+---
+
+## 🎯 Incentive Function (Behavior Optimization)
+
+\[
+I_w = \alpha H_p + \beta S_c
+\]
+
+| Variable | Description |
+|----------|------------|
+| \( H_p \) | Peak-hour participation ratio |
+| \( S_c \) | Earnings stability score |
+| \( \alpha, \beta \) | Weight parameters |
+
+> Encourages workers to operate in **high-demand, stable conditions**
+
+---
+
+## 💸 Profitability Constraint
+
+\[
+P_w \geq \mathbb{E}[L_w] + M
+\]
+
+\[
+\mathbb{E}[L_w] = p_w \cdot A_w
+\]
+
+| Symbol | Description |
+|--------|------------|
+| \( p_w \) | Trigger probability (ML predicted) |
+| \( A_w \) | Expected payout |
+| \( M \) | Margin |
+
+---
+
+## ⚡ Real-Time Adjustment Layer
+
+\[
+P_w' = P_w \cdot (1 + \delta_t)
+\]
+
+- \( \delta_t \): Short-term risk spike factor  
+  (e.g., rain, platform outages, demand shocks)
+
+---
+
+## 🛡️ Fraud Integration
+
+Fraud risk is incorporated directly into pricing:
+
+- Behavioral anomaly detection  
+- GPS & movement validation  
+- Multi-account / device linkage  
+
+### Impact
+
+- High fraud score → **higher premium or payout block**
+
+---
+
+## 🔁 Weekly Automation Pipeline
+
+1. **Data Ingestion**
+   - Earnings, activity logs, external APIs  
+
+2. **Feature Engineering**
+   - Rolling averages, variance, behavioral ratios  
+
+3. **ML Inference**
+   - Compute \( R_w \), \( p_w \)
+
+4. **Premium Calculation**
+   - Apply pricing formula  
+
+5. **Constraint Enforcement**
+   - Ensure profitability  
+
+6. **Fraud Adjustment**
+   - Modify premium based on \( F_w \)
+
+7. **User Delivery**
+   - Push premium with explanation  
+
+---
+
+## ✨ Key Advantages
+
+- ⚡ **Fully automated & real-time compatible**  
+- 🧠 **ML-driven dynamic pricing (adaptive)**  
+- 🎯 **Behavior-incentivized system**  
+- 🛡️ **Integrated fraud detection layer**  
+- 💸 **Guaranteed expected loss coverage + margin**  
+
+---
+
+## 🚀 Summary
+
+ShieldRide’s pricing engine transforms insurance into a:
+
+- **Predictive system** (ML-based risk scoring)  
+- **Responsive system** (real-time adjustments)  
+- **Adaptive system** (weekly recalibration)  
+
+Delivering a **scalable, embedded financial protection layer** for gig workers.

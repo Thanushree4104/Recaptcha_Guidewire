@@ -121,17 +121,6 @@ A **gig-based delivery worker** operating in quick-commerce platforms with **hig
 
 ---
 
-## 📌 Upcoming Sections
-
-- 🔄 Application Workflow  
-- 💰 Weekly Premium Model  
-- ⚡ Parametric Triggers  
-- 🤖 AI/ML Integration  
-- 🛠️ Tech Stack  
-- 📅 Development Plan  
-
----
-
 ## ✨ Vision
 
 To build a **real-time financial safety layer** for gig workers by combining:

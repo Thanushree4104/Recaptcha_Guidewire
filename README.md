@@ -131,6 +131,8 @@ To build a **real-time financial safety layer** for gig workers by combining:
 ---
 
 # 💰 Dynamic Weekly Premium Model
+# 💰 Dynamic Weekly Premium Model
+
 ### AI-Driven Pricing Engine for ShieldRide
 
 ---
@@ -139,73 +141,63 @@ To build a **real-time financial safety layer** for gig workers by combining:
 
 Design a **risk-adjusted, automated weekly premium system** that:
 
-- Reflects **real-time income risk**
-- Incentivizes **optimal worker behavior**
-- Ensures **profitability**
-- Integrates **fraud resistance**
+* Reflects **real-time income risk**
+* Incentivizes **optimal worker behavior**
+* Ensures **profitability**
+* Integrates **fraud resistance**
 
 ---
 
 ## 🧠 Core Pricing Function
 
-\[
-P_w = B \cdot (1 + R_w) \cdot (1 - I_w) + C + \gamma F_w
-\]
+`P_w = B * (1 + R_w) * (1 - I_w) + C + gamma * F_w`
 
 ---
 
-### 🔍 Variables
+## 🔍 Variables
 
-| Symbol | Description |
-|--------|------------|
-| \( P_w \) | Weekly Premium |
-| \( B \) | Base Premium |
-| \( R_w \) | Risk Score (ML output, 0–1) |
-| \( I_w \) | Incentive Factor (0–0.3) |
-| \( C \) | Operational Cost + Margin |
-| \( F_w \) | Fraud Risk Score (0–1) |
-| \( \gamma \) | Fraud Penalty Weight |
+| Symbol | Description                 |
+| ------ | --------------------------- |
+| P_w    | Weekly Premium              |
+| B      | Base Premium                |
+| R_w    | Risk Score (ML output, 0–1) |
+| I_w    | Incentive Factor (0–0.3)    |
+| C      | Operational Cost + Margin   |
+| F_w    | Fraud Risk Score (0–1)      |
+| gamma  | Fraud Penalty Weight        |
 
 ---
 
 ## ⚙️ Risk Scoring (ML Layer)
 
-\[
-R_w = f(X)
-\]
+`R_w = ML_Model(features)`
 
-- Model: **Gradient Boosting (XGBoost / LightGBM)**
-- Output: Probability of payout-trigger events
+* Model: **Gradient Boosting (XGBoost / LightGBM)**
+* Output: Probability of payout-trigger events
 
 ---
 
-### 📊 Feature Set
+## 📊 Feature Set
 
-\[
-X = \{
-\text{income variance},
-\text{idle time ratio},
-\text{peak-hour participation},
-\text{zone demand volatility},
-\text{weather risk},
-\text{platform downtime},
-\text{historical payouts}
-\}
-\]
+* Income variance (rolling 2–4 weeks)
+* Idle time ratio
+* Peak-hour participation
+* Zone demand volatility
+* Weather risk signals
+* Platform downtime frequency
+* Historical payout behavior
 
 ---
 
 ## 🎯 Incentive Function (Behavior Optimization)
 
-\[
-I_w = \alpha H_p + \beta S_c
-\]
+`I_w = alpha * H_p + beta * S_c`
 
-| Variable | Description |
-|----------|------------|
-| \( H_p \) | Peak-hour participation ratio |
-| \( S_c \) | Earnings stability score |
-| \( \alpha, \beta \) | Weight parameters |
+| Variable    | Description                   |
+| ----------- | ----------------------------- |
+| H_p         | Peak-hour participation ratio |
+| S_c         | Earnings stability score      |
+| alpha, beta | Weight parameters             |
 
 > Encourages workers to operate in **high-demand, stable conditions**
 
@@ -213,79 +205,80 @@ I_w = \alpha H_p + \beta S_c
 
 ## 💸 Profitability Constraint
 
-\[
-P_w \geq \mathbb{E}[L_w] + M
-\]
+`P_w >= Expected_Loss + Margin`
 
-\[
-\mathbb{E}[L_w] = p_w \cdot A_w
-\]
+`Expected_Loss = p_w * A_w`
 
-| Symbol | Description |
-|--------|------------|
-| \( p_w \) | Trigger probability (ML predicted) |
-| \( A_w \) | Expected payout |
-| \( M \) | Margin |
+| Term   | Description                           |
+| ------ | ------------------------------------- |
+| p_w    | Probability of trigger (ML predicted) |
+| A_w    | Expected payout                       |
+| Margin | Platform profit buffer                |
 
 ---
 
-## ⚡ Real-Time Adjustment Layer
+## ⚡ Real-Time Adjustment
 
-\[
-P_w' = P_w \cdot (1 + \delta_t)
-\]
+`P_w' = P_w * (1 + delta_t)`
 
-- \( \delta_t \): Short-term risk spike factor  
-  (e.g., rain, platform outages, demand shocks)
+* delta_t → Short-term risk spike
+  (rain, outages, demand shocks)
 
 ---
 
 ## 🛡️ Fraud Integration
 
-Fraud risk is incorporated directly into pricing:
+Fraud risk is embedded directly into pricing:
 
-- Behavioral anomaly detection  
-- GPS & movement validation  
-- Multi-account / device linkage  
+* Behavioral anomaly detection
+* GPS & movement validation
+* Multi-account / device linkage
 
 ### Impact
 
-- High fraud score → **higher premium or payout block**
+* High fraud score → **higher premium or payout restriction**
 
 ---
 
 ## 🔁 Weekly Automation Pipeline
 
 1. **Data Ingestion**
-   - Earnings, activity logs, external APIs  
+
+   * Earnings, activity logs, external APIs
 
 2. **Feature Engineering**
-   - Rolling averages, variance, behavioral ratios  
+
+   * Rolling averages, variance, behavioral ratios
 
 3. **ML Inference**
-   - Compute \( R_w \), \( p_w \)
+
+   * Compute risk score and trigger probability
 
 4. **Premium Calculation**
-   - Apply pricing formula  
+
+   * Apply pricing formula
 
 5. **Constraint Enforcement**
-   - Ensure profitability  
+
+   * Ensure expected loss coverage
 
 6. **Fraud Adjustment**
-   - Modify premium based on \( F_w \)
+
+   * Modify premium using fraud score
 
 7. **User Delivery**
-   - Push premium with explanation  
+
+   * Push premium with transparent breakdown
 
 ---
 
 ## ✨ Key Advantages
 
-- ⚡ **Fully automated & real-time compatible**  
-- 🧠 **ML-driven dynamic pricing (adaptive)**  
-- 🎯 **Behavior-incentivized system**  
-- 🛡️ **Integrated fraud detection layer**  
-- 💸 **Guaranteed expected loss coverage + margin**  
+* ⚡ Fully **automated & real-time compatible**
+* 🧠 **ML-driven dynamic pricing** (adaptive, not static)
+* 🎯 **Behavior-incentivized system**
+* 🛡️ Built-in **fraud detection layer**
+* 💸 Ensures **profitability + sustainability**
 
 ---
 
@@ -293,8 +286,8 @@ Fraud risk is incorporated directly into pricing:
 
 ShieldRide’s pricing engine transforms insurance into a:
 
-- **Predictive system** (ML-based risk scoring)  
-- **Responsive system** (real-time adjustments)  
-- **Adaptive system** (weekly recalibration)  
+* **Predictive system** → ML-based risk scoring
+* **Responsive system** → Real-time adjustments
+* **Adaptive system** → Weekly recalibration
 
-Delivering a **scalable, embedded financial protection layer** for gig workers.
+Delivering a **scalable, embedded financial safety layer** for gig workers.

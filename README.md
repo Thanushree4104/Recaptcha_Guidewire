@@ -24,24 +24,13 @@ Gig workers in rapid delivery ecosystems operate in **highly dynamic and uncerta
 
 ### 🔴 Key Challenges
 
-- 📉 **Income Volatility**
-  - Earnings fluctuate drastically due to demand variability  
+- Income Volatility : Earnings fluctuate drastically due to demand variability  
 
-- 🚫 **Lack of Risk Protection**
-  - Sudden demand drops  
-  - Platform outages  
-  - Extreme weather disruptions  
+- Lack of Risk Protection: Sudden demand drops, Platform outages, Extreme weather disruptions  
 
-- 👁️ **Limited Visibility**
-  - No insights into:
-    - High-demand zones  
-    - Optimal working hours  
-    - Future income risks  
+- Limited Visibility: No insights into High-demand zones, Optimal working hours, Future income risks  
 
-- 🐢 **Inefficient Traditional Insurance**
-  - Slow claim processing  
-  - Manual verification  
-  - Not suited for real-time gig workflows  
+- Inefficient Traditional Insurance: Slow claim processing, Manual verification, Not suited for real-time gig workflows  
 
 ---
 
@@ -116,21 +105,8 @@ A **gig-based delivery worker** operating in quick-commerce platforms with **hig
 > - 💸 Immediate liquidity  
 > - ⚡ Real-time support  
 > - 📉 Low-friction financial products  
->
-> over traditional long-term insurance models.
-
 ---
 
-## ✨ Vision
-
-To build a **real-time financial safety layer** for gig workers by combining:
-- Parametric insurance  
-- Predictive analytics  
-- Intelligent automation  
-
----
-
-# 💰 Dynamic Weekly Premium Model
 
 # 💰 Dynamic Weekly Premium Model
 
@@ -178,18 +154,6 @@ Design a **risk-adjusted, automated weekly premium system** that:
 Gradient Boosting models (XGBoost / LightGBM) are chosen for their superior performance on structured/tabular data, capturing complex non-linear relationships between risk factors. They provide high predictive accuracy with built-in handling of feature interactions and missing data. Additionally, they offer fast inference and feature importance interpretability, making them suitable for real-time, explainable pricing systems.
 ---
 
-## 📊 Feature Set
-
-* Income variance (rolling 2–4 weeks)
-* Idle time ratio
-* Peak-hour participation
-* Zone demand volatility
-* Weather risk signals
-* Platform downtime frequency
-* Historical payout behavior
-
----
-
 ## 🎯 Incentive Function (Behavior Optimization)
 
 `I_w = α * H_p + β * S_c`
@@ -231,13 +195,33 @@ Gradient Boosting models (XGBoost / LightGBM) are chosen for their superior perf
 
 Fraud risk is embedded directly into pricing:
 
-* Behavioral anomaly detection
-* GPS & movement validation
-* Multi-account / device linkage
+* Behavioral anomaly detection : Uses ML models on time-series data (earnings, activity, idle time) to flag patterns that deviate significantly from a worker’s historical behavior.
+* GPS & movement validation : Cross-checks continuous location traces with realistic movement patterns (speed, routes, delivery logs) to detect spoofed or impossible travel behavior.
+* Multi-account / device linkage : Builds identity graphs using device IDs, IPs, and payment details to identify multiple accounts or coordinated users operating from shared infrastructure.
 
-### Impact
+### Fraud Score
+
+F_w = w₁·B + w₂·G + w₃·L
+
+Term	Description
+B	Behavioral anomaly score
+G	Geo-spatial inconsistency score
+L	Linkage / identity risk score
+w₁, w₂, w₃	Weights (sum = 1)
 
 * High fraud score → **higher premium or payout restriction**
+
+### Decision Logic
+
+F_w < 0.5 → ✅ Approve
+
+0.5 – 0.8 → ⏳ Re-verify / delay
+
+F_w > 0.8 → 🚫 Block
+
+### ⚡ Impact
+
+Fraud score directly influences: Premium adjustment, Payout approval / restriction
 
 ---
 
@@ -273,26 +257,6 @@ Fraud risk is embedded directly into pricing:
 
 ---
 
-## ✨ Key Advantages
-
-* ⚡ Fully **automated & real-time compatible**
-* 🧠 **ML-driven dynamic pricing** (adaptive, not static)
-* 🎯 **Behavior-incentivized system**
-* 🛡️ Built-in **fraud detection layer**
-* 💸 Ensures **profitability + sustainability**
-
----
-
-## 🚀 Summary
-
-ShieldRide’s pricing engine transforms insurance into a:
-
-* **Predictive system** → ML-based risk scoring
-* **Responsive system** → Real-time adjustments
-* **Adaptive system** → Weekly recalibration
-
-Delivering a **scalable, embedded financial safety layer** for gig workers.
-
 ## ⚙️ System Architecture & Intelligence Layer
 # 🔄 Automated Weekly Pricing Engine
 
@@ -324,17 +288,9 @@ Aggregates weekly worker profile
 
 2. 📊 Risk Scoring Engine
 
-Computes a composite risk score (0–1) using:
-
-Income variance
-
-Idle time ratio
-
-External disruption probability
+Computes a composite risk score (0–1) using:Income variance, Idle time ratio, External disruption probability
 
 3. 💰 Premium Calculation
-
-Base Premium × Risk Multiplier × Behavioral Factor
 
 4. 🔁 Weekly Recalibration
 
@@ -350,14 +306,6 @@ Transparent breakdown:
 
 “Higher premium due to increased rain risk + low peak-hour activity”
 
-📐 Example Formula (Conceptual)
-Weekly Premium = Base Rate × (1 + Risk Score) × Behavior Modifier
-
-Where:
-
-Risk Score → ML output (0–1 scale)
-
-Behavior Modifier → Incentivizes optimal working patterns
 
 ## 🤖 Automation Pipeline
 🔗 End-to-End Flow

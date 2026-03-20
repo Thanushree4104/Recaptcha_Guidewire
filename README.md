@@ -132,6 +132,8 @@ To build a **real-time financial safety layer** for gig workers by combining:
 
 # 💰 Dynamic Weekly Premium Model
 
+# 💰 Dynamic Weekly Premium Model
+
 ### AI-Driven Pricing Engine for ShieldRide
 
 ---
@@ -149,7 +151,7 @@ Design a **risk-adjusted, automated weekly premium system** that:
 
 ## 🧠 Core Pricing Function
 
-`P_w = B * (1 + R_w) * (1 - I_w) + C + gamma * F_w`
+`P_w = B * (1 + R_w) * (1 - I_w) + C + γ * F_w`
 
 ---
 
@@ -163,7 +165,7 @@ Design a **risk-adjusted, automated weekly premium system** that:
 | I_w    | Incentive Factor (0–0.3)    |
 | C      | Operational Cost + Margin   |
 | F_w    | Fraud Risk Score (0–1)      |
-| gamma  | Fraud Penalty Weight        |
+| γ      | Fraud penalty weight        |
 
 ---
 
@@ -176,15 +178,27 @@ Design a **risk-adjusted, automated weekly premium system** that:
 
 ---
 
+## 📊 Feature Set
+
+* Income variance (rolling 2–4 weeks)
+* Idle time ratio
+* Peak-hour participation
+* Zone demand volatility
+* Weather risk signals
+* Platform downtime frequency
+* Historical payout behavior
+
+---
+
 ## 🎯 Incentive Function (Behavior Optimization)
 
-`I_w = alpha * H_p + beta * S_c`
+`I_w = α * H_p + β * S_c`
 
-| Variable    | Description                   |
-| ----------- | ----------------------------- |
-| H_p         | Peak-hour participation ratio |
-| S_c         | Earnings stability score      |
-| alpha, beta | Weight parameters             |
+| Symbol | Description                   |
+| ------ | ----------------------------- |
+| H_p    | Peak-hour participation ratio |
+| S_c    | Earnings stability score      |
+| α, β   | Weight parameters             |
 
 > Encourages workers to operate in **high-demand, stable conditions**
 
@@ -206,9 +220,9 @@ Design a **risk-adjusted, automated weekly premium system** that:
 
 ## ⚡ Real-Time Adjustment
 
-`P_w' = P_w * (1 + delta_t)`
+`P_w' = P_w * (1 + δ_t)`
 
-* delta_t → Short-term risk spike
+* δ_t → Short-term risk spike
   (rain, outages, demand shocks)
 
 ---

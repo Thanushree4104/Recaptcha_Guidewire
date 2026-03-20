@@ -639,23 +639,50 @@ ShieldRide ensures **fraud detection without harming genuine users**.
 
 ---
 
-## 🚀 Strategic Advantage
+# 🔄 Application Workflow
 
-ShieldRide’s anti-spoofing system is:
-
-* 🧠 **Multi-signal & ML-driven**
-* 🔗 **Graph-aware (detects fraud networks)**
-* ⚡ **Real-time & scalable**
-* ⚖️ **User-fair with soft-fail design**
+### End-to-End Execution Flow
 
 ---
 
-## ✨ Summary
+1. **Onboarding & Consent**
+   User signs up, links platform account, and grants data access.
 
-ShieldRide transforms fraud detection from:
+2. **Data Ingestion**
+   Real-time data collected from platform APIs, device signals, and external sources (weather, demand).
 
-* ❌ GPS-based validation
-* ✅ **Context-aware, multi-signal intelligence system**
+3. **Feature Engineering**
+   Generate behavioral and risk features (income variance, idle time, peak-hour activity).
 
-Ensuring **security, trust, and sustainability** in parametric insurance.
+4. **ML Inference**
+   Compute:
+
+   * Risk score (R_w)
+   * Trigger probability (p_w)
+   * Fraud score (F_w)
+
+5. **Premium Calculation**
+   Apply dynamic pricing model and enforce profitability constraints.
+
+6. **Policy Activation**
+   User opts in; premium deducted via UPI / wallet / earnings.
+
+7. **Real-Time Monitoring**
+   System continuously tracks earnings, activity, and external disruptions.
+
+8. **Trigger Detection**
+   Parametric conditions evaluated and validated via trusted data sources.
+
+9. **Fraud Check**
+   Multi-signal validation (behavioral, geo, graph-based).
+
+10. **Payout Execution**
+    Approved payouts are instantly credited (< 5 minutes).
+
+11. **Feedback Loop**
+    Dashboard updates with insights, risk score, and next-week premium.
+
+---
+
+
 

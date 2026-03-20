@@ -131,7 +131,6 @@ To build a **real-time financial safety layer** for gig workers by combining:
 ---
 
 # 💰 Dynamic Weekly Premium Model
-# 💰 Dynamic Weekly Premium Model
 
 ### AI-Driven Pricing Engine for ShieldRide
 
@@ -174,18 +173,6 @@ Design a **risk-adjusted, automated weekly premium system** that:
 
 * Model: **Gradient Boosting (XGBoost / LightGBM)**
 * Output: Probability of payout-trigger events
-
----
-
-## 📊 Feature Set
-
-* Income variance (rolling 2–4 weeks)
-* Idle time ratio
-* Peak-hour participation
-* Zone demand volatility
-* Weather risk signals
-* Platform downtime frequency
-* Historical payout behavior
 
 ---
 
